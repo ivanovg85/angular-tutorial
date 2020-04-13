@@ -9,15 +9,15 @@ export class RecipeService {
 
   private recipes: Recipe[] = [
     new Recipe(
-      "A Test Recipe",
-      "This is simply a test",
-      "https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,q_auto,w_610/v1/hellofresh_s3/image/5dcc139c96d0db43857c2eb3-a12c2ae7.jpg",
+      "Tasty Schnitzel",
+      "A super-tasty Schnitzel - just awesome",
+      "https://www.daringgourmet.com/wp-content/uploads/2014/03/Schnitzel-5.jpg",
       [new Ingredient("Meat", 1), new Ingredient("French Fries", 20)]
     ),
     new Recipe(
-      "Another Test Recipe",
-      "This is simply a test",
-      "https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,q_auto,w_610/v1/hellofresh_s3/image/5dcc139c96d0db43857c2eb3-a12c2ae7.jpg",
+      "Big Fat Burger",
+      "What else you need to say?",
+      "https://www.tagesspiegel.de/images/der-big-vegan-ts-ist-der-erste-vegane-burger-bei-mcdonalds/24257794/2-format43.jpg",
       [new Ingredient("Buns", 2), new Ingredient("Meat", 1)]
     ),
   ];
@@ -26,6 +26,10 @@ export class RecipeService {
 
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  getRecipe(index: number) {
+    return this.recipes[index];
   }
 
   addIngredientToShoppingList(ingredients: Ingredient[]) {
